@@ -10,11 +10,12 @@ This project consist of such class as mesh (grid), zone, solver, plt.
     zone - contains information about boundary conditions;
     solver - the main class where all calculations are performed;
     plt - the class that generates illustrations.
-    Example - an example where the following problem is dealt with: 
+    Example - an example where the following problem is dealt with Problem
 
-    an elastic (steel) cylinder is located between non-deformable planes, 
-    there is no friction between them. 
-    The entire side surface of the cylinder is compressed by a certain amount.
+## Problem
+an elastic (steel) cylinder is located between non-deformable planes, 
+there is no friction between them. 
+The entire side surface of the cylinder is compressed by a certain amount.
 
 ## Instruction:
 Install Matlab 2017a (Matlab 9.2) or newer;
