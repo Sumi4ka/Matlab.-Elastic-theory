@@ -10,8 +10,7 @@ This project consist of such class as mesh (grid), zone, solver, plt.
     zone - contains information about boundary conditions;
     solver - the main class where all calculations are performed;
     plt - the class that generates illustrations.
-    Example - an example where the following problem is dealt with Problem
-
+    Example - an example where the following Problem
 ## Problem
 an elastic (steel) cylinder is located between non-deformable planes, 
 there is no friction between them. 
