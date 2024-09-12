@@ -117,7 +117,7 @@ classdef solver
                     w1=obj.w(k,obj.M);
                     if (obj.z_right_v(k)~=0)
                         if (obj.z_right_v(k)==-1)
-                            obj.v(k,obj.M)=obj.v(k,obj.M-1)-c*(obj.r(obj.M)-obj.r(obj.M-1))*((obj.w(k+1,obj.M)-obj.w(k-1,obj.M))/(obj.z(k+1)-obj.z(k-1))+obj.v(k,obj.M-1)/obj.r(obj.M-1));
+                            obj.v(k,obj.M)=obj.v(k,obj.M-1)-c*(obj.r(obj.M)-obj.r(obj.M-1))*((obj.w(k+1,obj.M)-obj.w(k-1,obj.M))/(obj.z(k+1)-obj.z(k-1))+obj.v(k,obj.M)/obj.r(obj.M));
                         else
                             obj.v(k,obj.M)=(-1)*obj.z_right_v(k);
                         end
@@ -133,7 +133,7 @@ classdef solver
                 %B=[obj.w(obj.N,obj.M-1)/(obj.r(obj.M)-obj.r(obj.M-1))+obj.v(obj.N-1,obj.M)/(obj.z(obj.N)-obj.z(obj.N-1)); obj.v(obj.N,obj.M-1)/(obj.r(obj.M)-obj.r(obj.M-1))+c*obj.w(obj.N-1,obj.M)/(obj.z(obj.N)-obj.z(obj.N-1))];
                 %x=A\B;
                 x(1)=obj.w(obj.N,obj.M-1)-(obj.r(obj.M)-obj.r(obj.M-1))*(obj.v(obj.N,obj.M)-obj.v(obj.N-1,obj.M))/(obj.z(obj.N)-obj.z(obj.N-1));
-                x(2)=obj.v(obj.N,obj.M-1)-c*(obj.r(obj.M)-obj.r(obj.M-1))*((obj.w(obj.N,obj.M)-obj.w(obj.N-1,obj.M))/(obj.z(obj.N)-obj.z(obj.N-1))+obj.v(obj.N,obj.M-1)/obj.r(obj.M-1));
+                x(2)=obj.v(obj.N,obj.M-1)-c*(obj.r(obj.M)-obj.r(obj.M-1))*((obj.w(obj.N,obj.M)-obj.w(obj.N-1,obj.M))/(obj.z(obj.N)-obj.z(obj.N-1))+obj.v(obj.N,obj.M)/obj.r(obj.M));
                 v1=obj.v(obj.N,obj.M);
                 w1=obj.w(obj.N,obj.M);
                 if (obj.z_right_w(obj.N)~=0)
@@ -164,7 +164,7 @@ classdef solver
                         w1=obj.w(k,1);
                         if (obj.z_left_v(k)~=0)
                             if (obj.z_left_v(k)==-1)
-                                obj.v(k,1)=obj.v(k,2)-c*(obj.r(1)-obj.r(2))*((obj.w(k+1,1)-obj.w(k-1,1))/(obj.z(k+1)-obj.z(k-1))+obj.v(k,2)/obj.r(2));
+                                obj.v(k,1)=obj.v(k,2)-c*(obj.r(1)-obj.r(2))*((obj.w(k+1,1)-obj.w(k-1,1))/(obj.z(k+1)-obj.z(k-1))+obj.v(k,1)/obj.r(1));
                             else
                                 obj.v(k,1)=(-1)*obj.z_left_v(k);
                             end
@@ -180,7 +180,7 @@ classdef solver
                     %B=[obj.w(obj.N,2)/(obj.r(1)-obj.r(2))+obj.v(obj.N-1,1)/(obj.z(obj.N)-obj.z(obj.N-1)); obj.v(obj.N,2)/(obj.r(1)-obj.r(2))+c*obj.w(obj.N-1,1)/(obj.z(obj.N)-obj.z(obj.N-1))];
                     %x=A\B;
                     x(1)=obj.w(obj.N,2)-(obj.r(1)-obj.r(2))*(obj.v(obj.N,1)-obj.v(obj.N-1,1))/(obj.z(obj.N)-obj.z(obj.N-1));
-                    x(2)=obj.v(obj.N,2)-c*(obj.r(1)-obj.r(2))*((obj.w(obj.N,1)-obj.w(obj.N-1,1))/(obj.z(obj.N)-obj.z(obj.N-1))+obj.v(obj.N,2)/obj.r(2));
+                    x(2)=obj.v(obj.N,2)-c*(obj.r(1)-obj.r(2))*((obj.w(obj.N,1)-obj.w(obj.N-1,1))/(obj.z(obj.N)-obj.z(obj.N-1))+obj.v(obj.N,1)/obj.r(1));
                     v1=obj.v(obj.N,1);
                     w1=obj.w(obj.N,1);
                     if (obj.z_left_w(obj.N)~=0)
